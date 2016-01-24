@@ -1,12 +1,6 @@
 <?php
     require_once "../includes/engine.php";
-
-    if(!session::has('username')){
-        header('Location:/?noSession');
-    }
-
     $localvars->set('user', htmlSanitize(session::get('username')));
-
     templates::display('header');
 ?>
 <section class="wrapper">
