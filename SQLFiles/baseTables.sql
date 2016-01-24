@@ -53,3 +53,13 @@ CREATE TABLE `databaseSurvey`(
     PRIMARY KEY(`dbID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `routerSurvey`;
+CREATE TABLE `routerSurvey`(
+    `rID` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+    `ipAddr` varchar(50) NOT NULL,
+    `username` varchar(50) NOT NULL,
+    `rating` tinyint(3) NULL,
+    `feedback` text NULL,
+    `framework` varchar(50) NULL,
+    PRIMARY KEY(`rID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
