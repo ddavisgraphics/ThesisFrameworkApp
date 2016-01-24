@@ -70,6 +70,10 @@ header {
     background:lighten($primary,50%);
 }
 
+.secondary{
+    background: rgba(lighten($secondary,30%),.5);
+}
+
 .formErrors ul {
     list-style: none;
 }
@@ -173,6 +177,16 @@ header {
     }
 }
 
+.routing {
+    @include breakpoint(tablet){
+        .picture {
+            padding:20px 0 0 20px;
+            margin-top:30px;
+            img {width:105%;}
+        }
+    }
+}
+
 .imgHeader {
     img { width:100%; height:auto;}
     @include span-columns(12);
@@ -213,6 +227,7 @@ header {
 
 .databaseExample {
     @include span-columns(12);
+    padding:0 20px;
     @include breakpoint(tablet){
         margin-bottom:30px;
         &:first-child{
@@ -227,9 +242,13 @@ header {
     }
 }
 
+.routing.databaseExample{
+    margin-top:25px;
+}
 
 
-#bash,#bootstrap,#ruby, .syntaxHighlight, .codeInput {
+
+#bash,#bootstrap,#ruby, .syntaxHighlight, .codeInput, .syntaxHighlight, .simpleEditor, .meteorEditor, .syntaxHighlighter {
     min-height:100px;
     max-height:600px;
     padding:20px;
