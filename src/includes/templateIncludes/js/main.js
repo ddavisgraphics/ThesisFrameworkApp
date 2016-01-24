@@ -1,3 +1,5 @@
+var processed = false;
+
 $(function(){
     // Nav Toggle
     // =====================================================
@@ -43,4 +45,50 @@ $(function(){
     }
 
 
+    // Track Lessons & Surveys
+    // =====================================================
+    $(window).on('scroll', scrollTrack);
+
+    $('form').submit(function(){
+        pageName = pageName + "Survey";
+        $.ajax({
+            dataType:'json',
+            url:'/ajax/complete/',
+            data: { username: sessionUser, ipAddress: ipAddr, page: pageName},
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            },
+            complete: function(data){
+                var jsonData = data.responseJSON[0];
+                console.log(jsonData);
+            },
+        });
+    });
 });
+
+function scrollTrack(){
+    if(processed){
+        return false;
+    }
+
+    console.log('scrolling');
+
+    if($(window).scrollTop() >= ($(document).height() - $(window).height())*0.5){
+        processed = true; //sets a processing AJAX request flag
+
+        pageName = pageName + "Lesson";
+
+        $.ajax({
+            dataType:'json',
+            url:'/ajax/complete/',
+            data: { username: sessionUser, ipAddress: ipAddr, page: pageName},
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            },
+            complete: function(data){
+                var jsonData = data.responseJSON[0];
+                console.log(jsonData);
+            },
+        });
+    }
+}
