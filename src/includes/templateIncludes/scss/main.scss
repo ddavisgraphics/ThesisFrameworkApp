@@ -1,0 +1,269 @@
+// Frameworks Default Stuff
+@import 'normalize/normalize';
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'utilities/mixin';
+
+// Design
+@import 'colors/colors';
+@import 'typography/typography';
+
+// Utilities
+@import 'utilities/layoutHelpers';
+@import 'utilities/buttons';
+@import 'utilities/forms';
+@import 'utilities/table';
+
+section{
+    margin-bottom:30px;
+}
+
+header {
+    @extend .wrapper;
+    background:$darkGray;
+    @include span-columns(12);
+    .container { padding:15px; }
+}
+
+.siteTitle {
+    @include span-columns(8);
+    font-weight:800;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
+    h1 { margin:0; color:#fff; font-size:30px; color:$primary; margin-top:-5px;}
+    span { padding:18px; color:$secondary; margin:0; padding:0;}
+}
+
+.welcome {
+    background:$primary;
+    border-bottom:2px solid darken($primary, 20%);
+    h2 {color:#fff }
+    color:#fff;
+}
+
+.nav-toggle {
+    @include span-columns(4);
+    color:#fff;
+    position:relative;
+    text-align:right;
+    a {
+        i { margin:0; padding:0; }
+        font-size:24px;
+        padding:2px 15px 5px;
+        border:1px solid #fff;
+        color:#fff;
+        &:hover,&:active,&:visited {
+            border:1px solid $secondary;
+            color:$secondary;
+        }
+    }
+}
+
+.nav {
+    background:$gray;
+}
+
+.survey, .section{
+    background:$lightGray;
+}
+
+.section{
+    background:lighten($primary,50%);
+}
+
+.formErrors ul {
+    list-style: none;
+}
+
+.preference {
+    .btn {
+        @include span-columns(12);
+        @include button($primary);
+
+        @include breakpoint(tablet){
+            @include span-columns(4);
+            @include omega(4n);
+        }
+    }
+    .active {
+        @include button($secondary);
+    }
+}
+
+.submit {
+    text-align:right;
+}
+
+.field-group{
+    @include row;
+}
+
+.rating-system {
+  @include span-columns(6);
+  text-align:left;
+  font-size: 30px;
+    .star {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &:before {
+            content: "\f006";
+            padding-right: 5px;
+            color: $darkGray;
+        }
+    }
+    .star.active:before{
+        content: "\f005";
+        color:$warning;
+    }
+
+}
+
+.formBuilder {
+    @include span-columns(12);
+
+    @include breakpoint(tablet){
+        @include span-columns(8);
+        @include shift(2);
+    }
+
+    .field-group:last-child {
+        text-align:right;
+    }
+}
+
+.formErrors {
+    .successMessage { @extend .success-message; }
+    .warningMessage { @extend .warning-message; }
+    .errorMessage { @extend .error-message; }
+}
+
+.picture {
+    img { width:100%; height:auto;}
+    @include span-columns(12);
+    display:none;
+    @include breakpoint(tablet){
+        display:block;
+        padding:50px;
+        margin-top:30px;
+        @include span-columns(4);
+    }
+
+    &.database {
+        @include breakpoint(tablet){
+            img{ width:120%; margin-left:-80px; margin-top:50px;}
+            @include span-columns(4);
+            padding:0;
+        }
+    }
+}
+
+.intro {
+    @include span-columns(12);
+
+    @include breakpoint(tablet){
+        @include span-columns(8);
+        @include omega();
+        padding:20px;
+        margin-top:20px;
+    }
+}
+
+.imgHeader {
+    img { width:100%; height:auto;}
+    @include span-columns(12);
+    //padding:20px;
+    border-bottom:1px solid $lightGray;
+    margin-bottom:20px;
+}
+
+.meteor,.engine {
+    @include span-columns(12);
+    padding:20px;
+    border: 1px solid $lightGray;
+    margin-bottom:20px;
+    @include breakpoint(tablet){
+        @include span-columns(6);
+    }
+}
+
+.engine{
+    @include breakpoint(tablet){
+        @include omega();
+    }
+}
+
+.vagrant,.vbox {
+    @include span-columns(12);
+    padding:20px;
+    img{ width:60%; height:auto; margin:0 auto}
+    text-align:center;
+     @include breakpoint(tablet){
+        @include span-columns(6);
+    }
+}
+
+.vbox {
+    @include omega();
+}
+
+.databaseExample {
+    @include span-columns(12);
+    @include breakpoint(tablet){
+        margin-bottom:30px;
+        &:first-child{
+            @include span-columns(8);
+            margin-top:60px;
+        }
+        &:last-child{
+            @include span-columns(4);
+            @include omega();
+            margin-top:25px;
+        }
+    }
+}
+
+
+
+#bash,#bootstrap,#ruby, .syntaxHighlight, .codeInput {
+    min-height:100px;
+    max-height:600px;
+    padding:20px;
+    margin-bottom:40px;
+    @include span-columns(12);
+}
+
+.bigBox {
+    height:600px;
+}
+
+#bootstrap, .smallBox {
+    height:300px;
+}
+
+#ruby, .mediumBox {
+    height:400px;
+}
+
+.video-container{
+    @include span-columns(12);
+    margin-bottom:30px;
+}
+
+footer {
+    background:$darkGray;
+    @include span-columns(12);
+    font-size:10px;
+    color:#fff;
+    text-align:center;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    z-index:999;
+
+    p { margin:0; padding:10px; }
+}

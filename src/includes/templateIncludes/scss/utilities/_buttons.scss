@@ -1,0 +1,12 @@
+.btn { @include button($lightGray); }
+.btn-primary { @include button($primary); }
+.btn-secondary { @include button($secondary); }
+.btn-success { @include button($success); }
+.btn-error { @include button($error); }
+.btn-warn { @include button($warning); }
+
+input[type=submit], button {
+    @include button($link);
+    width:initial;
+    float:none;
+}

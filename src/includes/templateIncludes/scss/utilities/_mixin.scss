@@ -1,0 +1,75 @@
+@mixin breakpoint($break) {
+    @if $break == phone {
+        @media (min-width: 30em) { @content; }
+    }
+    @else if $break == tablet {
+        @media (min-width: 48em) { @content; }
+    }
+    @else if $break == laptop {
+        @media (min-width: 60em) { @content; }
+    }
+    @else if $break == desktop {
+        @media (min-width: 80em) { @content; }
+    }
+    @else if $break == print {
+         @media print { @content; }
+    }
+    @else {
+        @media (min-width: $break) { @content; }
+    }
+}
+
+@mixin appearance($value) {
+  @include prefixer(appearance, $value, webkit moz ms o spec);
+}
+
+// Credit: The Sass Way
+// http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@function set-shadow($color) {
+  @if (lightness($color) > 50) {
+    @return 2px 2px 1px rgba(lighten($color,20%),.8);
+  } @else {
+    @return 2px 2px 1px rgba(darken($color,20%),.8);
+  }
+}
+
+@mixin button($defaultBtn) {
+    @include appearance(none);
+    background-color: $defaultBtn;
+    border-radius: 5px;
+    border: 1px solid darken($defaultBtn,20%);
+    box-shadow: 1px 1px 4px rgba(darken($defaultBtn,20%), 0.4);
+    color: set-text-color($defaultBtn);
+    text-shadow: set-shadow($defaultBtn);
+    display: inline-block;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align:center;
+    text-decoration:none;
+
+    &:hover,&:active,&:visited {
+        background-color:darken($defaultBtn,10%);
+        color: set-text-color(darken($defaultBtn,10%));
+        text-shadow: set-shadow(darken($defaultBtn,10%));
+        text-decoration:underline;
+    }
+}
+
+@mixin message($color){
+    padding: 20px;
+    margin: 20px auto;
+    background: $color;
+    border-radius:5px;
+    border: 1px solid darken($color,10%);
+    color: set-text-color($color);
+    max-width:70%;
+}
+

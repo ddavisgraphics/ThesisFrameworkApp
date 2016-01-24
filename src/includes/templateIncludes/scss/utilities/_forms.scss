@@ -1,0 +1,54 @@
+input, select, option, textarea {
+    @include appearance(none !important);
+    border:1px solid $lightGray;
+    background:#fff;
+    padding:10px;
+    margin:0 0 20px;
+    @include span-columns(12);
+    border-radius:0;
+
+    &:focus {
+        outline:none;
+        border: 1px solid $info;
+    }
+}
+
+textarea{
+    min-height:200px;
+}
+
+label {
+    @include span-columns(12);
+    font-weight:600;
+    margin-bottom:10px;
+    color:#666;
+}
+
+select {
+    background-image:
+        linear-gradient(45deg, transparent 50%, $primary 50%),
+        linear-gradient(135deg, $primary 50%, transparent 50%),
+        linear-gradient(to right, $lightGray, $lightGray);
+    background-position:
+        calc(100% - 22px) calc(1em + 4px),
+        calc(100% - 15px) calc(1em + 4px),
+        calc(100% - 50px) -2px;
+    background-size:
+        8px 8px,
+        8px 8px,
+        1px 4em;
+    background-repeat: no-repeat;
+
+    &:focus {
+        background-image:
+            linear-gradient(45deg, transparent 50%, $info 50%),
+            linear-gradient(135deg, $info 50%, transparent 50%),
+            linear-gradient(to right, $info, $info);
+    }
+}
+
+.form-group{
+    @include span-columns(12);
+    padding:10px;
+    margin-bottom:20px;
+}
