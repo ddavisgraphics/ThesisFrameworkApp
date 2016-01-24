@@ -1,0 +1,46 @@
+<section class="formBuilder editTable">
+	<header>
+		<h1>{formTitle}</h1>
+	</header>
+
+	{ifFormErrors}
+	<section class="formErrors">
+		{formErrors}
+	</section>
+	{/ifFormErrors}
+
+	{form}
+	<table>
+		<thead>
+		<tr>
+			{ifExpandable}<th></th>{/ifExpandable}
+			<th>Delete</th>
+			{fieldsLoop editStrip="true"}
+			<th>{field display="label" valueOnly="true"}</th>
+			{/fieldsLoop}
+		</tr>
+		</thead>
+		<tbody class="editStripFields">
+		{rowLoop}
+		<tr data-row_id="{rowLoopID}">
+			{ifExpandable}<td><i class="icon icon-collapse" data-target="#updateForm_{rowLoopID}" title="Expand"></i></td>{/ifExpandable}
+			<td><input type="checkbox" name="__deleted[]" value="{rowLoopID}" title="Delete" class="deleteRow"></td>
+			{fieldsLoop editStrip="true" showHidden="true"}
+			<td class="formField">{field display="field"}</td>
+			{/fieldsLoop}
+		</tr>
+		{ifExpandable}
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="{fieldCount}"><div class="expandable" id="updateForm_{rowLoopID}"></div></td>
+		</tr>
+		{/ifExpandable}
+		{/rowLoop}
+		</tbody>
+	</table>
+	<br><br>
+		{noShowExpandable}
+			{field name="submit"}
+		{/noShowExpandable}
+	{/form}
+</section>
