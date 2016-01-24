@@ -9,7 +9,19 @@ CREATE TABLE `session`(
     `html` boolean NOT NULL DEFAULT 0,
     `job` varchar(200) DEFAULT NULL,
     `degree` varchar(300) DEFAULT NULL,
+    `email` varchar(300) DEFAULT NULL,
     PRIMARY KEY(`sID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `completed`;
+CREATE TABLE `completed`(
+    `cID` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+    `username` varchar(50) NOT NULL,
+    `ipAddr` varchar(50) NOT NULL,
+    `numCompleted` tinyint(2) NOT NULL,
+    `section` varchar(50) NOT NULL,
+    PRIMARY KEY(`cID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -63,3 +75,16 @@ CREATE TABLE `routerSurvey`(
     `framework` varchar(50) NULL,
     PRIMARY KEY(`rID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `giftcard`;
+CREATE TABLE `giftcard`(
+    `gcID` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+    `ipAddr` varchar(50) NOT NULL,
+    `username` varchar(50) NOT NULL,
+    `usernameUS` varchar(50) NOT NULL,
+    `emailAddr` text NULL,
+    `chance` int NOT NULL DEFAULT 1,
+    PRIMARY KEY(`gcID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
