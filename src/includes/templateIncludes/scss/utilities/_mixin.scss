@@ -71,5 +71,6 @@
     border: 1px solid darken($color,10%);
     color: set-text-color($color);
     max-width:70%;
+    a { color:darken($color,40%); font-weight:600; }
 }
 

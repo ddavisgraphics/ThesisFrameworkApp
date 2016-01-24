@@ -84,8 +84,8 @@ header {
         @include button($primary);
 
         @include breakpoint(tablet){
-            @include span-columns(4);
-            @include omega(4n);
+            @include span-columns(3);
+            @include omega(5n);
         }
     }
     .active {
@@ -271,6 +271,12 @@ header {
 .video-container{
     @include span-columns(12);
     margin-bottom:30px;
+}
+
+pre {
+    @include span-columns(12);
+    background:$lightGray;
+    padding:20px;
 }
 
 footer {
