@@ -6,11 +6,18 @@
 
         <p class="micro-text"> This application uses cookies as a local storage system and to validate that you have submitted the basic information. Please make sure you have cookies enabled. </p>
 
-        <form class="registerUser" action=<?php print htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+        <form class="registerUser" action="<?php print htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             {csrf}
             <div class='username form-group'>
                 <label for="username"> Username </label>
                 <input type="text" placeholder="username" name="username" />
+            </div>
+
+            <div class='username form-group'>
+                <label for="email"> Valid Email
+                    <div class="micro-text"> This is for giftcard and session logins only </div>
+                </label>
+                <input type="email" placeholder="jonSnow@ghost.com" name="email" />
             </div>
 
             <div class="occupation form-group">
@@ -48,6 +55,7 @@
                 <a href="javascript:void(0);" class="btn" data-job="web"> Web </a>
                 <a href="javascript:void(0);" class="btn" data-job="print"> Print </a>
                 <a href="javascript:void(0);" class="btn" data-job="multimedia"> Multimedia / Digital </a>
+                <a href="javascript:void(0);" class="btn" data-job="no preference"> No Preference </a>
                 <input type="hidden" class="hidden" value="" name="jobPreference" id="inputJob" />
             </div>
 
