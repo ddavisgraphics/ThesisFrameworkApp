@@ -17,6 +17,8 @@
     <!-- Project Specific Head Includes -->
     <?php recurseInsert("headerIncludes.php","php") ?> <!-- Page Specific -->
     <?php recurseInsert("includes/headerIncludes.php","php") ?> <!-- Project Wide -->
+    <!--  page specific vars -->
+    <?php recurseInsert("pageVars.php", "php"); ?>
 </head>
 
 <body>
@@ -37,3 +39,10 @@
         <?php recurseInsert("includes/nav.php","php") ?>
     </div>
 </nav>
+
+<section class="feedback">
+    <div class="container">
+        {local var="giftCheck"}
+        {local var="feedback"}
+    </div>
+</section>
