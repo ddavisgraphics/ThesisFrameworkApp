@@ -18,7 +18,7 @@
     templates::display('header');
 
     if(isset($_SESSION['data']['username'])){
-        header('Location:/feedback');
+        header('Location:/welcomeback');
     }
 
 ?>

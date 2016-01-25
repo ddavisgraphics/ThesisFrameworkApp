@@ -1,0 +1,72 @@
+.progress-bar {
+  background-color: $lightGray;
+  border: darken($lightGray,10%);
+  box-shadow: inset 0 0 3px 0 rgba(darken($lightGray, 50%), 0.15);
+  border-radius: 5px;
+  height: 30px;
+  margin: 0 auto;
+  padding: 4px;
+  @include span-columns(12);
+
+  span.meter {
+    @include animation(progress 0.7s linear infinite);
+    background-color: $secondary;
+    @include background-image(linear-gradient(-45deg, rgba(255,255,255, 0.15) 25%,
+                                                      transparent 25%,
+                                                      transparent 50%,
+                                                      rgba(255,255,255, 0.15) 50%,
+                                                      rgba(255,255,255, 0.15) 75%,
+                                                      transparent 75%));
+    background-size: 40px 40px;
+    background-repeat: repeat-x;
+    border: darken($secondary,10%);
+    border-radius: 3px;
+    display: block;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+
+@-moz-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+
+@-ms-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+
+@-o-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+
+@keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
