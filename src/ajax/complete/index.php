@@ -5,6 +5,19 @@
     } else {
         $data = dbSanitize($_GET['MYSQL']);
         $complete = User::completed($data['username'],$data['ipAddress'],$data['page']);
+
+
+        if(session::has('completePages')){
+            $newSessPages = session::get('completePages');
+        } else {
+            $newSessPages = array();
+        }
+
+        $pageCompleted  = $data['page'];
+        if(!in_array($pageCompleted, $newSessPages)){
+            $newSessPages[] = $pageCompleted;
+        }
+        session::set('completePages', $newSessPages);
     }
 
 
