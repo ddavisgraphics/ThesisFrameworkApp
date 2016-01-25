@@ -3,7 +3,7 @@
     $localvars->set('user', htmlSanitize(session::get('username')));
     templates::display('header');
 ?>
-<section class="wrapper">
+<section id="track" class="wrapper">
     <div class="container">
         <div class="row">
             <div class="picture database">
