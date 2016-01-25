@@ -19,6 +19,7 @@
     <?php recurseInsert("includes/headerIncludes.php","php") ?> <!-- Project Wide -->
     <!--  page specific vars -->
     <?php recurseInsert("pageVars.php", "php"); ?>
+    <?php recurseInsert('sessionChecks.php', "php");?>
 </head>
 
 <body>

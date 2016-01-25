@@ -32,9 +32,6 @@
     recurseInsert("includes/classes/index.php", "php");
     recurseInsert("includes/functions/index.php", "php");
 
-    //do session checks
-    $sessionCheck = User::performChecks();
-
     // load a template to use
     templates::load('default');
 ?>
