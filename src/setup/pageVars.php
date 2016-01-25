@@ -3,7 +3,7 @@
 
     $localvars->set('sessionUsername',session::get('username'));
     $localvars->set('ipAddr', $_SERVER['REMOTE_ADDR']);
-    $localvars->set('pageName', 'Setup -');
+    $localvars->set('pageName', 'Setup ');
 ?>
 <!--set JS Variables -->
 <script>
