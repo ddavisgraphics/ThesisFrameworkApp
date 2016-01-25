@@ -1,9 +1,8 @@
 <?php
     $localvars = localvars::getInstance();
-
     $localvars->set('sessionUsername',session::get('username'));
     $localvars->set('ipAddr', $_SERVER['REMOTE_ADDR']);
-    $localvars->set('pageName', 'Databases -');
+    $localvars->set('pageName', 'Gift Card Registration');
 ?>
 <!--set JS Variables -->
 <script>
