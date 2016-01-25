@@ -309,6 +309,10 @@ header {
     @include span-columns(12);
 }
 
+.codeInput{
+    height:500px;
+}
+
 .bigBox {
     height:600px;
 }
