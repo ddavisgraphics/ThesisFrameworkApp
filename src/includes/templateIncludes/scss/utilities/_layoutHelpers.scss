@@ -29,9 +29,14 @@
     }
 }
 
+.subtle-message {
+    @include message($lightGray);
+}
+
 .error-message {
     @include message($error);
 }
+
 .warning-message{
     @include message($warning);
 }

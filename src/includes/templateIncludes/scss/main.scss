@@ -39,14 +39,20 @@ header {
     h2 {color:#fff }
     color:#fff;
 }
-
-.nav-toggle {
+.toggles{
     @include span-columns(4);
-    color:#fff;
-    position:relative;
+    @include omega();
     text-align:right;
+}
+.gift-toggle, .nav-toggle{
+    @include span-columns(6);
+    color:#fff;
+    padding:10px;
+    span {display:none;}
     a {
-        i { margin:0; padding:0; }
+        position:relative;
+        text-decoration:none;
+        i { margin:0; padding:0;}
         font-size:24px;
         padding:2px 15px 5px;
         border:1px solid #fff;
@@ -55,6 +61,35 @@ header {
             border:1px solid $secondary;
             color:$secondary;
         }
+    }
+}
+
+.nav-toggle{
+    @include span-columns(12);
+     @include breakpoint(phone){
+       @include span-columns(6);
+       @include omega();
+    }
+    @include breakpoint(tablet){
+        @include span-columns(4);
+    }
+    @include breakpoint(desktop){
+        @include span-columns(3);
+    }
+}
+
+.gift-toggle{
+    display:none;
+    @include breakpoint(phone){
+        display:block;
+    }
+    @include breakpoint(tablet){
+        @include span-columns(8);
+        span{display:inline; font-size:14px;}
+    }
+
+    @include breakpoint(desktop){
+        @include span-columns(9);
     }
 }
 
@@ -248,7 +283,7 @@ header {
 
 
 
-#bash,#bootstrap,#ruby, .syntaxHighlight, .codeInput, .syntaxHighlight, .simpleEditor, .meteorEditor, .syntaxHighlighter {
+#bash,#bootstrap,#ruby, .syntaxHighlight, .codeInput, .syntaxHighlight, .simpleEditor, .meteorEditor, .syntaxHighlighter, .phpEditor {
     min-height:100px;
     max-height:600px;
     padding:20px;
