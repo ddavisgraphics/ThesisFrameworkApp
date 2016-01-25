@@ -54,10 +54,10 @@
 
             $completed = self::numCompleted($username);
             if($completed >= 4){
-                $localvars->set('giftCheck', "<div class='giftCheck successMessage hidden'> You are eligible to register for your gift card now! Your chance level is {$completed}.  <a href=
+                $localvars->set('giftCheck', "<div class='giftCheck success-message hidden'> You are eligible to register for your gift card now! Your chance level is ".($completed / 2).".  <a href=
                     '/giftCardReg'> Click here to register now! </a> </div>");
             } else {
-                $localvars->set('giftCheck', "<div class='giftCheck warningMessage hidden'> Complete more lessons to get your name registered for a gift card.  You chance level increases with more lessons you complete. </div>");
+                $localvars->set('giftCheck', "<div class='giftCheck subtle-message hidden'> Complete more lessons to get your name registered for a gift card.  Your chance level increases with more lessons you complete. </div>");
             }
         }
 
