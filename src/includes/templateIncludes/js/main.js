@@ -7,6 +7,12 @@ $(function(){
         $('nav').toggleClass('hidden');
     });
 
+     // Nav Toggle
+    // =====================================================
+    $('.gift-toggle a').click(function(){
+        $('.giftCheck').toggleClass('hidden');
+    });
+
     // Home Page Functionality
     // =====================================================
     if($('.registerUser').length != 0){
