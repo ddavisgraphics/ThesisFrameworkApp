@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{local var="pageName"}</title>
+    <title>{local var="pageName"} | {local var="appName"} | {local var="meta_authors"} </title>
 
     <!-- Meta Information -->
     <meta charset="utf-8">
