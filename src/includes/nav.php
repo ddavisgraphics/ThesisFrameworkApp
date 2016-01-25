@@ -6,26 +6,38 @@
         $completedModules = User::numCompleted(session::get('username'));
 
         switch ($completedModules) {
-            case '1-3':
+            case  0:
+                $progress = "5%";
+                break;
+            case  1:
+                $progress = "10%";
+                break;
+            case 2:
                 $progress = "20%";
                 break;
-            case '3-6':
+            case 3:
+                $progress = "30%";
+                break;
+            case 4:
+                $progress = "40%";
+                break;
+            case 5:
                 $progress = "50%";
                 break;
-            case '7':
+            case 6:
                 $progress = "60%";
                 break;
-            case '8':
+            case 7:
+                $progress = "70%";
+                break;
+            case 8:
                 $progress = "80%";
                 break;
-            case '9':
+            case 9:
                 $progress = "90%";
                 break;
-            case '> 9':
-                $progress = "100%";
-                break;
             default:
-                $progress = "1%";
+                $progress = "100%";
                 break;
         }
 
@@ -39,7 +51,7 @@
 
             <h2> Progress </h2>
             <div class="progress-bar">
-                <span class="meter" style="width: {local var="progress"}"></span>
+                <span class="meter" style="width: {local var="progress"}">{local var="progress"}</span>
             </div>
         </div>
 
