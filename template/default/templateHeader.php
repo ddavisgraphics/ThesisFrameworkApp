@@ -28,8 +28,13 @@
         <div class="siteTitle">
             <h1> Learning<span>App</span> </h1>
         </div>
-        <div class="nav-toggle mobile-only">
-            <a href="javascript:void(0);"> <i class="fa fa-bars"></i> </a>
+        <div class="toggles">
+            <div class="gift-toggle">
+                <a href="javascript:void(0);"> <i class="fa fa-gift"></i> <span> Gift Card </span></a>
+            </div>
+            <div class="nav-toggle">
+                <a href="javascript:void(0);"> <i class="fa fa-bars"></i> </a>
+            </div>
         </div>
     </div>
 </header>
@@ -40,7 +45,7 @@
     </div>
 </nav>
 
-<section class="feedback">
+<section class="wrapper feedback">
     <div class="container">
         {local var="giftCheck"}
         {local var="feedback"}
