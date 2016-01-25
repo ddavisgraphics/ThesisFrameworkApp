@@ -6,15 +6,6 @@
     // username
     $username  = dbSanitize(session::get('username'));
 
-    // rating sys
-    $starHTML  = '<div class="rating-system">
-                    <span class="star" data-star="1"></span>
-                    <span class="star" data-star="2"></span>
-                    <span class="star" data-star="3"></span>
-                    <span class="star" data-star="4"></span>
-                    <span class="star" data-star="5"></span>
-                  </div>';
-
     // create customer form
     $form = formBuilder::createForm('feedback');
 
@@ -86,18 +77,25 @@
         'fieldClass' => 'submit',
         'value'      => 'Send Feedback'
     ));
+
+    $numModules = User::numCompleted($username);
+    if( $numModules < 4){
+        $localvars->set('form', '<div class="warning-message"> I am sorry you do not have enough completed modules to register for a chance to win a giftcard at this time. You currently have <strong> '.($numModules/2).' of 2 </strong> modules completed. </div>');
+    } else {
+        $localvars->set('form', '{form name="feedback" display="form"}');
+    }
 ?>
 
 <section class="wrapper">
     <div class="container">
         <h2> Giftcard Registration </h2>
 
-        <p> Upon completing at least 2 modules and surveys you become eligible for a chance to win a giftcard.  Drawings will be at random.  You can increase your chances of winning by completing more course modules.  Each course module and survey you complete bumps up your probability number. </p>
+        <p> Upon completing at least 2 modules and surveys you become eligible for a chance to win a giftcard.  Drawings will be at random.  You can increase your chances of winning by completing more course modules.  Each course module and survey you complete bumps up your probability number.  Gift cards will be randomly select and the amounts will be $20, $25, $50.  4 total giftcards will be rewarded. </p>
 
         <p class="micro-text"> Form will fail if your email is already in the system.  </p>
 
-        <div class="{local var="formClass"}">
-            {form name="feedback" display="form"}
+        <div class="form">
+            {local var="form"}
         </div>
     </div>
 </section>
