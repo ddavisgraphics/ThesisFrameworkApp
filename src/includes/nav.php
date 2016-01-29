@@ -62,7 +62,7 @@
                 <a href="/routing" class="btn-primary">   Routing        </a>
                 <a href="/views" class="btn-primary">     Views          </a>
                 <a href="/databases" class="btn-primary"> Databases      </a>
-                <a href="/setup" class="btn-primary">     Logic / Events </a>
+                <a href="/logic" class="btn-primary">     Logic / Events </a>
             </div>
 
             <h2> Tutorial Series </h2>
